@@ -18,6 +18,14 @@ jobs:
       with:
         fetch-depth: 0
         
+    - name: Git Semantic Version
+      uses: PaulHatch/semantic-version@v4.0.3
+      with: 
+        major_patter: "major:"
+        minor_patter: "feat:"
+        format: "${major}.${minor}.${patc-prereleases${increment}"
+      id: version
+        
     - name: Docker login
       env: 
         DOCKER_USER: ${{secrets.DOCKER_USER}}
@@ -26,14 +34,6 @@ jobs:
       run: | 
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "new version: $NEW_VERSION!!!!"
-        
-    - name: Git Semantic Version
-      uses: PaulHatch/semantic-version@v4.0.3
-      with: 
-        major_patter: "major:"
-        minor_patter: "feat:"
-        format: "${major}.${minor}.${patc-prereleases${increment}"
-      id: version
 
     # - name: Bill Docker Image
     #   run: | 
