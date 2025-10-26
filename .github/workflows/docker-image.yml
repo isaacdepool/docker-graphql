@@ -32,4 +32,4 @@ jobs:
     - name: Push Docker Image
       run: | 
         docker push isaacdepool/docker-graphql:0.0.2
-        docker push isaacdepool/docker-graphql:lastest
+        docker push isaacdepool/docker-graphql:latest
