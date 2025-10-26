@@ -28,6 +28,7 @@ jobs:
     - name: Bill Docker Image
       run: | 
         docker build -t isaacdepool/docker-graphql:0.0.2 .
+        docker build -t isaacdepool/docker-graphql:latest .
 
     - name: Push Docker Image
       run: | 
